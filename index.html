@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills Pack — Elige tu perfil | Smart Business</title>
+<meta name="description" content="17 skills de Claude AI armadas para tu perfil profesional. Elige el tuyo y arma tu sistema.">
+<style>
+  :root{
+    --carbon:#161512;
+    --carbon-soft:#201f1b;
+    --carbon-line:#332f28;
+    --esmeralda:#2EE6A6;
+    --rust:#C2622E;
+    --text:#F2F0EA;
+    --text-muted:#a8a49a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--carbon);
+    color:var(--text);
+    font-family:'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  @font-face{font-family:'DM Sans';src:local('DM Sans');}
+  h1,h2,h3{font-family:'Playfair Display', Georgia, serif;font-weight:800;letter-spacing:-0.01em;}
+
+  /* Top bar */
+  .topbar{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:20px 24px;
+    border-bottom:1px solid var(--carbon-line);
+    position:sticky;top:0;
+    background:rgba(22,21,18,0.92);
+    backdrop-filter:blur(8px);
+    z-index:10;
+  }
+  .brand{font-family:'Playfair Display',serif;font-size:18px;font-weight:800;color:var(--text);}
+  .brand span{color:var(--esmeralda);}
+  .diag-link{
+    font-size:12px;text-transform:uppercase;letter-spacing:0.08em;
+    color:var(--esmeralda);text-decoration:none;
+    border:1px solid var(--esmeralda);
+    padding:8px 14px;border-radius:100px;
+    white-space:nowrap;
+  }
+
+  /* Hero */
+  .hero{
+    padding:56px 24px 40px;
+    max-width:720px;margin:0 auto;
+    text-align:center;
+  }
+  .eyebrow{
+    font-size:11px;text-transform:uppercase;letter-spacing:0.2em;
+    color:var(--text-muted);font-weight:500;
+    display:block;margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:clamp(30px,7vw,48px);
+    line-height:1.05;
+    margin-bottom:18px;
+  }
+  .hero h1 em{color:var(--rust);font-style:italic;}
+  .hero p{
+    font-size:16px;color:var(--text-muted);
+    max-width:520px;margin:0 auto;
+  }
+
+  /* Diagnostic banner - alternative entry point */
+  .diag-banner{
+    max-width:720px;margin:32px auto 0;
+    padding:20px 22px;
+    background:var(--carbon-soft);
+    border:1px solid var(--carbon-line);
+    border-radius:16px;
+    display:flex;align-items:center;gap:16px;
+    flex-wrap:wrap;
+  }
+  .diag-banner .txt{flex:1;min-width:200px;}
+  .diag-banner .txt strong{display:block;font-size:14px;color:var(--text);margin-bottom:2px;}
+  .diag-banner .txt span{font-size:13px;color:var(--text-muted);}
+  .diag-cta{
+    background:var(--esmeralda);color:var(--carbon);
+    font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;
+    padding:11px 18px;border-radius:100px;text-decoration:none;
+    white-space:nowrap;
+  }
+
+  /* Divider text */
+  .or-divider{
+    text-align:center;color:var(--text-muted);
+    font-size:12px;text-transform:uppercase;letter-spacing:0.15em;
+    margin:36px auto 20px;
+  }
+
+  /* Grid */
+  .grid-wrap{max-width:1040px;margin:0 auto;padding:0 20px 64px;}
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  @media(min-width:600px){
+    .grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(min-width:900px){
+    .grid{grid-template-columns:repeat(3,1fr);}
+  }
+
+  .card{
+    display:flex;align-items:center;gap:14px;
+    background:var(--carbon-soft);
+    border:1px solid var(--carbon-line);
+    border-radius:14px;
+    padding:18px;
+    text-decoration:none;
+    color:var(--text);
+    transition:border-color 0.15s ease, transform 0.1s ease;
+    min-height:76px;
+  }
+  .card:active{transform:scale(0.98);}
+  .card.active:hover{border-color:var(--esmeralda);}
+  .card-icon{
+    font-size:22px;flex-shrink:0;
+    width:44px;height:44px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(46,230,166,0.08);
+    border-radius:10px;
+  }
+  .card.disabled .card-icon{background:rgba(255,255,255,0.04);}
+  .card-body{flex:1;min-width:0;}
+  .card-body h3{
+    font-family:'DM Sans',sans-serif;font-weight:500;
+    font-size:15px;color:var(--text);margin-bottom:2px;
+  }
+  .card-body p{font-size:12.5px;color:var(--text-muted);}
+  .card-arrow{color:var(--esmeralda);font-size:18px;flex-shrink:0;}
+
+  .card.disabled{
+    cursor:default;
+  }
+  .card.disabled .card-body h3{color:var(--text-muted);}
+  .tag-soon{
+    font-size:9.5px;text-transform:uppercase;letter-spacing:0.08em;
+    color:var(--rust);border:1px solid var(--rust);
+    padding:3px 7px;border-radius:100px;
+    flex-shrink:0;
+  }
+
+  /* Footer note */
+  .footnote{
+    max-width:640px;margin:0 auto;padding:0 24px 60px;
+    text-align:center;font-size:12.5px;color:var(--text-muted);
+  }
+  .footnote a{color:var(--esmeralda);text-decoration:none;}
+
+  /* Touch target sizing for mobile */
+  @media(max-width:599px){
+    .card{padding:16px;min-height:72px;}
+    .topbar{padding:16px 18px;}
+    .diag-link{font-size:11px;padding:7px 12px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand">Skills<span>Pack</span></div>
+    <a href="https://testskills.rodolfobuitrago.com" class="diag-link">Hacer diagnóstico</a>
+  </div>
+
+  <div class="hero">
+    <span class="eyebrow">Skills Pack - Skills por perfil</span>
+    <h1>¿Cuál es tu <em>perfil</em> profesional?</h1>
+    <p>Elige el que más se parece a tu día a día. Vas a ver las 11 skills universales más las 6 de nicho, armadas específicamente para tu trabajo y listas para usar en Claude AI.</p>
+  </div>
+
+  <div class="diag-banner">
+    <div class="txt">
+      <strong>¿No estás seguro cuál te sirve?</strong>
+      <span>Responde 2 preguntas y te decimos las 3 skills exactas para empezar.</span>
+    </div>
+    <a href="https://testskills.rodolfobuitrago.com" class="diag-cta">Diagnóstico gratis</a>
+  </div>
+
+  <div class="or-divider">o elige tu perfil directamente</div>
+
+  <div class="grid-wrap">
+    <div class="grid">
+
+      <a href="gerente-pyme.html" class="card active">
+        <div class="card-icon">🏢</div>
+        <div class="card-body">
+          <h3>Gerente de PYME</h3>
+          <p>Operación, equipo y reportes</p>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="consultor-coach.html" class="card active">
+        <div class="card-icon">🎯</div>
+        <div class="card-body">
+          <h3>Consultor / Coach</h3>
+          <p>Propuestas, sesiones y seguimiento</p>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <div class="card disabled">
+        <div class="card-icon">🎓</div>
+        <div class="card-body">
+          <h3>Docente / Formador</h3>
+          <p>Contenido y materiales de curso</p>
+        </div>
+        <span class="tag-soon">Pronto</span>
+      </div>
+
+      <div class="card disabled">
+        <div class="card-icon">🔗</div>
+        <div class="card-body">
+          <h3>Afiliado digital</h3>
+          <p>Promoción y contenido de venta</p>
+        </div>
+        <span class="tag-soon">Pronto</span>
+      </div>
+
+      <div class="card disabled">
+        <div class="card-icon">🏠</div>
+        <div class="card-body">
+          <h3>Agente inmobiliario</h3>
+          <p>Fichas, seguimiento y cierre</p>
+        </div>
+        <span class="tag-soon">Pronto</span>
+      </div>
+
+      <div class="card disabled">
+        <div class="card-icon">🎬</div>
+        <div class="card-body">
+          <h3>Creador de contenido</h3>
+          <p>Guiones, calendario y formatos</p>
+        </div>
+        <span class="tag-soon">Pronto</span>
+      </div>
+
+      <div class="card disabled">
+        <div class="card-icon">🚀</div>
+        <div class="card-body">
+          <h3>Emprendedor online</h3>
+          <p>Producto, oferta y ventas</p>
+        </div>
+        <span class="tag-soon">Pronto</span>
+      </div>
+
+      <div class="card disabled">
+        <div class="card-icon">⚖️</div>
+        <div class="card-body">
+          <h3>Abogado independiente</h3>
+          <p>Documentos y casos</p>
+        </div>
+        <span class="tag-soon">Pronto</span>
+      </div>
+
+      <div class="card disabled">
+        <div class="card-icon">🩺</div>
+        <div class="card-body">
+          <h3>Profesional de salud</h3>
+          <p>Pacientes y comunicación</p>
+        </div>
+        <span class="tag-soon">Pronto</span>
+      </div>
+
+      <div class="card disabled">
+        <div class="card-icon">👥</div>
+        <div class="card-body">
+          <h3>Profesional en Talento Humano</h3>
+          <p>Selección, clima y procesos internos</p>
+        </div>
+        <span class="tag-soon">Pronto</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footnote">
+    ¿Tu perfil no aparece o no encaja con ninguno? <a href="mailto:info@masclientes.com.co">Escríbenos</a> y lo revisamos contigo.
+  </div>
+
+</body>
+</html>
