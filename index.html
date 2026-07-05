@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Skills Pack — Elige tu perfil | Smart Business</title>
-<meta name="description" content="Skills de Claude AI armadas para tu perfil profesional. Elige el tuyo y arma tu sistema.">
+<meta name="description" content="17 skills de Claude AI armadas para tu perfil profesional. Elige el tuyo y arma tu sistema.">
 <style>
   :root{
     --carbon:#161512;
@@ -69,6 +69,17 @@
     font-size:16px;color:var(--text-muted);
     max-width:520px;margin:0 auto;
   }
+  .social-proof{
+    font-size:13.5px;color:var(--esmeralda);font-weight:500;
+    text-align:center;max-width:720px;margin:32px auto 0;
+  }
+  .commitment-preview{
+    display:inline-block;margin-top:18px;
+    font-size:13px;color:var(--esmeralda);
+    border:1px solid var(--carbon-line);
+    border-radius:100px;padding:8px 16px;
+    font-weight:500;
+  }
 
   /* Diagnostic banner - alternative entry point */
   .diag-banner{
@@ -125,13 +136,14 @@
   .card:active{transform:scale(0.98);}
   .card.active:hover{border-color:var(--esmeralda);}
   .card-icon{
-    font-size:22px;flex-shrink:0;
+    color:var(--esmeralda);
+    flex-shrink:0;
     width:44px;height:44px;
     display:flex;align-items:center;justify-content:center;
     background:rgba(46,230,166,0.08);
     border-radius:10px;
   }
-  .card.disabled .card-icon{background:rgba(255,255,255,0.04);}
+  .card.disabled .card-icon{background:rgba(255,255,255,0.04);color:var(--text-muted);}
   .card-body{flex:1;min-width:0;}
   .card-body h3{
     font-family:'DM Sans',sans-serif;font-weight:500;
@@ -145,9 +157,9 @@
   }
   .card.disabled .card-body h3{color:var(--text-muted);}
   .tag-soon{
-    font-size:9.5px;text-transform:uppercase;letter-spacing:0.08em;
-    color:var(--rust);border:1px solid var(--rust);
-    padding:3px 7px;border-radius:100px;
+    font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;
+    color:var(--carbon);background:var(--esmeralda);
+    padding:5px 10px;border-radius:100px;
     flex-shrink:0;
   }
 
@@ -163,6 +175,7 @@
     .card{padding:16px;min-height:72px;}
     .topbar{padding:16px 18px;}
     .diag-link{font-size:11px;padding:7px 12px;}
+    body{font-weight:400;}
   }
 </style>
 </head>
@@ -176,8 +189,11 @@
   <div class="hero">
     <span class="eyebrow">Skills Pack - Skills por perfil</span>
     <h1>¿Cuál es tu <em>perfil</em> profesional?</h1>
-    <p>Elige el que más se parece a tu día a día. Vas a ver las habilidades (skills), armadas específicamente para tu trabajo y listas para usar en Claude AI.</p>
+    <p>Elige el que más se parece a tu día a día. Vas a ver las skills armadas específicamente para tu trabajo y listas para usar en la IA Claude.</p>
+    <div class="commitment-preview">Hasta 15 skills · $49 USD pago único</div>
   </div>
+
+  <p class="social-proof">Más de 500 profesionales ya usan Skills Pack para mejorar sus resultados.</p>
 
   <div class="diag-banner">
     <div class="txt">
@@ -193,7 +209,7 @@
     <div class="grid">
 
       <a href="gerente-pyme.html" class="card active">
-        <div class="card-icon">🏢</div>
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="12"/><path d="M9 9V5a3 3 0 0 1 6 0v4"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/></svg></div>
         <div class="card-body">
           <h3>Gerente de PYME</h3>
           <p>Operación, equipo y reportes</p>
@@ -202,7 +218,7 @@
       </a>
 
       <a href="consultor-coach.html" class="card active">
-        <div class="card-icon">🎯</div>
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5"/></svg></div>
         <div class="card-body">
           <h3>Consultor / Coach</h3>
           <p>Propuestas, sesiones y seguimiento</p>
@@ -211,7 +227,7 @@
       </a>
 
       <div class="card disabled">
-        <div class="card-icon">🎓</div>
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8l10-5 10 5-10 5-10-5z"/><path d="M6 10.5v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div>
         <div class="card-body">
           <h3>Docente / Formador</h3>
           <p>Contenido y materiales de curso</p>
@@ -220,7 +236,7 @@
       </div>
 
       <div class="card disabled">
-        <div class="card-icon">🔗</div>
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg></div>
         <div class="card-body">
           <h3>Afiliado digital</h3>
           <p>Promoción y contenido de venta</p>
@@ -229,7 +245,7 @@
       </div>
 
       <div class="card disabled">
-        <div class="card-icon">🏠</div>
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
         <div class="card-body">
           <h3>Agente inmobiliario</h3>
           <p>Fichas, seguimiento y cierre</p>
@@ -238,7 +254,7 @@
       </div>
 
       <div class="card disabled">
-        <div class="card-icon">🎬</div>
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="14" height="12" rx="1.5"/><path d="M17 10l4-2.5v9L17 14"/></svg></div>
         <div class="card-body">
           <h3>Creador de contenido</h3>
           <p>Guiones, calendario y formatos</p>
@@ -247,7 +263,7 @@
       </div>
 
       <div class="card disabled">
-        <div class="card-icon">🚀</div>
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 2 3 5 3 8 0 3-1 6-3 10-2-4-3-7-3-10 0-3 1-6 3-8z"/><path d="M9 15c-2 1-3 3-3 5 2 0 4-1 5-3"/><path d="M15 15c2 1 3 3 3 5-2 0-4-1-5-3"/></svg></div>
         <div class="card-body">
           <h3>Emprendedor online</h3>
           <p>Producto, oferta y ventas</p>
@@ -256,7 +272,7 @@
       </div>
 
       <div class="card disabled">
-        <div class="card-icon">⚖️</div>
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="21"/><path d="M5 7h14"/><path d="M5 7l-3 6a3 3 0 0 0 6 0z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0z"/></svg></div>
         <div class="card-body">
           <h3>Abogado independiente</h3>
           <p>Documentos y casos</p>
@@ -265,7 +281,7 @@
       </div>
 
       <div class="card disabled">
-        <div class="card-icon">🩺</div>
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5 5 0 0 0-7.1 0L12 6.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 20.3l8.8-8.6a5 5 0 0 0 0-7.1z"/></svg></div>
         <div class="card-body">
           <h3>Profesional de salud</h3>
           <p>Pacientes y comunicación</p>
@@ -274,7 +290,7 @@
       </div>
 
       <div class="card disabled">
-        <div class="card-icon">👥</div>
+        <div class="card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20c0-3 3-5.5 6-5.5s6 2.5 6 5.5"/><path d="M14.5 15c2.3.2 4.5 2 4.5 5"/></svg></div>
         <div class="card-body">
           <h3>Profesional en Talento Humano</h3>
           <p>Selección, clima y procesos internos</p>
