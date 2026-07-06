@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills Pack para Agente Inmobiliario | Smart Business</title>
+<meta name="description" content="14 skills de Claude AI para prospectar, dar seguimiento sin perder a nadie y negociar oferta y comisión con argumentos. $49 USD pago único.">
+<style>
+  :root{
+    --carbon:#161512;
+    --carbon-soft:#201f1b;
+    --carbon-line:#332f28;
+    --esmeralda:#2EE6A6;
+    --rust:#C2622E;
+    --text:#F2F0EA;
+    --text-muted:#a8a49a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--carbon);
+    color:var(--text);
+    font-family:'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Playfair Display', Georgia, serif;font-weight:800;letter-spacing:-0.01em;}
+
+  .nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 24px;
+    border-bottom:1px solid var(--carbon-line);
+    position:sticky;top:0;
+    background:rgba(22,21,18,0.92);
+    backdrop-filter:blur(8px);
+    z-index:10;
+  }
+  .back-link{
+    font-size:13px;color:var(--text-muted);text-decoration:none;
+    display:flex;align-items:center;gap:6px;
+  }
+  .back-link:hover{color:var(--esmeralda);}
+  .brand-mini{font-family:'Playfair Display',serif;font-size:15px;font-weight:800;}
+  .brand-mini span{color:var(--esmeralda);}
+
+  .hero{
+    padding:60px 24px 44px;
+    max-width:680px;margin:0 auto;
+    text-align:center;
+  }
+  .eyebrow{
+    font-size:11px;text-transform:uppercase;letter-spacing:0.18em;
+    color:var(--esmeralda);font-weight:500;
+    display:block;margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:clamp(28px,6.5vw,44px);
+    line-height:1.08;
+    margin-bottom:18px;
+  }
+  .hero h1 em{color:var(--rust);font-style:italic;}
+  .hero p{
+    font-size:16px;color:var(--text-muted);
+    max-width:500px;margin:0 auto 8px;
+  }
+  .hero-stat{
+    display:inline-block;margin-top:20px;
+    font-size:12.5px;color:var(--text-muted);
+    border:1px solid var(--carbon-line);
+    border-radius:100px;padding:8px 16px;
+  }
+  .hero-stat b{color:var(--text);}
+
+  .problems-wrap{
+    max-width:680px;margin:0 auto;padding:0 20px;
+    display:grid;grid-template-columns:1fr;gap:10px;
+    margin-bottom:36px;
+  }
+  @media(min-width:640px){
+    .problems-wrap{grid-template-columns:repeat(3,1fr);}
+  }
+  .problem-card{
+    background:var(--carbon-soft);
+    border:1px solid var(--carbon-line);
+    border-left:2px solid var(--esmeralda);
+    border-radius:10px;
+    padding:18px 16px;
+  }
+  .problem-num{
+    display:block;font-family:'Playfair Display',serif;font-weight:700;
+    font-size:13px;color:var(--esmeralda);margin-bottom:8px;
+  }
+  .problem-card p{font-size:13.5px;color:var(--text-muted);line-height:1.55;}
+
+  .section-label{
+    max-width:680px;margin:0 auto;padding:0 24px;
+    font-size:12px;text-transform:uppercase;letter-spacing:0.12em;
+    color:var(--text-muted);
+    text-align:center;margin-bottom:20px;margin-top:8px;
+  }
+
+  .accordion-wrap{max-width:680px;margin:0 auto;padding:0 20px 48px;}
+  .acc-item{
+    border:1px solid var(--carbon-line);
+    border-radius:12px;
+    margin-bottom:10px;
+    overflow:hidden;
+    background:var(--carbon-soft);
+  }
+  .acc-header{
+    display:flex;align-items:center;gap:14px;
+    padding:16px 18px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .acc-num{
+    font-family:'Playfair Display',serif;font-weight:700;
+    font-size:14px;color:var(--esmeralda);
+    width:26px;flex-shrink:0;
+  }
+  .acc-title{
+    flex:1;font-size:15px;font-weight:500;color:var(--text);
+  }
+  .acc-chevron{
+    color:var(--text-muted);font-size:14px;
+    transition:transform 0.2s ease;flex-shrink:0;
+  }
+  .acc-item.open .acc-chevron{transform:rotate(180deg);color:var(--esmeralda);}
+  .acc-body{
+    max-height:0;overflow:hidden;
+    transition:max-height 0.25s ease;
+  }
+  .acc-body-inner{
+    padding:0 18px 18px 58px;
+    font-size:14px;color:var(--text-muted);
+    line-height:1.6;
+  }
+
+  .price-block{
+    max-width:520px;margin:16px auto 0;
+    padding:32px 28px;
+    background:var(--carbon-soft);
+    border:1px solid var(--carbon-line);
+    border-radius:18px;
+    text-align:center;
+  }
+  .price-tag{
+    font-family:'Playfair Display',serif;font-weight:800;
+    font-size:44px;color:var(--text);
+    margin-bottom:4px;
+  }
+  .price-tag span{font-size:16px;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-weight:300;}
+  .price-sub{font-size:13px;color:var(--text-muted);margin-bottom:24px;}
+  .price-includes{
+    text-align:left;font-size:13.5px;color:var(--text-muted);
+    margin-bottom:26px;
+  }
+  .price-includes li{
+    list-style:none;padding-left:22px;position:relative;margin-bottom:8px;
+  }
+  .price-includes li::before{
+    content:"✓";position:absolute;left:0;color:var(--esmeralda);
+  }
+  .cta-buy{
+    display:block;width:100%;
+    background:var(--rust);color:var(--text);
+    font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;
+    padding:16px;border-radius:100px;text-decoration:none;
+    text-align:center;
+  }
+  .cta-note{font-size:11.5px;color:var(--text-muted);margin-top:14px;}
+
+  .footnote{
+    max-width:560px;margin:0 auto;padding:40px 24px 64px;
+    text-align:center;font-size:12.5px;color:var(--text-muted);
+  }
+  .footnote a{color:var(--esmeralda);text-decoration:none;}
+
+  @media(max-width:599px){
+    .nav{padding:14px 18px;}
+    .hero{padding:44px 20px 32px;}
+    .price-block{padding:26px 20px;margin:16px 16px 0;}
+    body{font-weight:400;}
+    .eyebrow{font-size:13px;letter-spacing:0.1em;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="nav">
+    <a href="index.html" class="back-link">← Cambiar de perfil</a>
+    <div class="brand-mini">Skills<span>Pack</span></div>
+  </div>
+
+  <div class="hero">
+    <span class="eyebrow">Skills Pack · Agente Inmobiliario</span>
+    <h1>Dejar de competir solo por <em>comisión</em></h1>
+    <p>14 skills de Claude AI para prospectar sin sonar genérico, dar seguimiento sin perder a nadie y negociar oferta y comisión con argumentos.</p>
+    <div class="hero-stat"><b>14</b> skills · funcionan en Claude AI · actualización 12 meses</div>
+  </div>
+
+  <div class="problems-wrap">
+    <div class="problem-card">
+      <span class="problem-num">01</span>
+      <p>Compites solo por precio de comisión porque no tienes claro qué te hace distinto de otros agentes de la zona.</p>
+    </div>
+    <div class="problem-card">
+      <span class="problem-num">02</span>
+      <p>Pierdes prospectos por falta de constancia — no tienes un sistema claro de cada cuánto y cómo dar seguimiento.</p>
+    </div>
+    <div class="problem-card">
+      <span class="problem-num">03</span>
+      <p>No sabes si estás listando una propiedad por debajo o por encima del mercado, porque no tienes una valoración clara antes de fijar precio.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Lo que incluye tu pack</div>
+
+  <div class="accordion-wrap" id="accordion">
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">01</span><span class="acc-title">Posicionamiento del agente</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Define qué te hace distinto de los otros agentes de la zona, para dejar de competir solo por precio de comisión.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">02</span><span class="acc-title">Contenido inmobiliario para redes</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Te da ideas y estructura de contenido que atrae compradores y vendedores, sin que tengas que inventar qué publicar cada semana.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">03</span><span class="acc-title">Calendario editorial inmobiliario</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Organiza qué vas a publicar y cuándo, alineado con lanzamientos de propiedades o temporadas altas de búsqueda.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">04</span><span class="acc-title">Investigación de prospecto</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Reúne lo que necesitas saber de un prospecto antes de contactarlo, para no llegar a ciegas a la primera conversación.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">05</span><span class="acc-title">Mensajes de prospección inmobiliaria</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Redacta el primer mensaje de contacto con un prospecto nuevo, sin sonar a agente genérico que manda el mismo texto a todos.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">06</span><span class="acc-title">Seguimiento de prospección</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Redacta el mensaje para retomar a alguien con quien hablaste hace días y no ha avanzado, sin sonar insistente.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">07</span><span class="acc-title">Seguimiento post-visita</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Redacta el mensaje después de que alguien visitó una propiedad, para mantener el interés vivo sin presionar de más.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">08</span><span class="acc-title">Sistema de seguimiento</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Define cada cuánto y en qué orden le das seguimiento a cada tipo de prospecto, para no perder a nadie por falta de constancia.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">09</span><span class="acc-title">Gestión de pipeline inmobiliario</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Organiza en qué etapa está cada prospecto (nuevo, contactado, visita, oferta, cierre), para saber dónde enfocar tu tiempo.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">10</span><span class="acc-title">Ficha de propiedad</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Redacta la ficha técnica de una propiedad con los datos clave, para tener algo consistente que enviar o mostrar.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">11</span><span class="acc-title">Presentación de propiedad</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Redacta el pitch de venta de una propiedad orientado al comprador, resaltando lo que le importa a él, no solo specs.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">12</span><span class="acc-title">Valoración de propiedad (CMA)</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Te ayuda a estimar el precio de venta de una propiedad comparando el mercado, para no listar por debajo o por encima.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">13</span><span class="acc-title">Negociación de oferta</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Te prepara los argumentos para negociar precio y condiciones cuando ya hay una oferta sobre la mesa.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">14</span><span class="acc-title">Objeciones de precio y comisión</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Te da respuestas para cuando el propietario dice "está muy bajo", el comprador dice "está muy caro", o cuestionan tu comisión.</div></div>
+    </div>
+
+  </div>
+
+  <div class="price-block">
+    <div class="price-tag">$49 <span>USD · pago único</span></div>
+    <div class="price-sub">Actualizaciones incluidas por 12 meses</div>
+    <ul class="price-includes">
+      <li>14 skills listas para instalar en Claude AI</li>
+      <li>Guía de instalación y guía de uso por skill</li>
+      <li>Actualizaciones durante 12 meses</li>
+    </ul>
+    <a href="PENDIENTE_STRIPE_LINK_AGENTE_INMOBILIARIO" class="cta-buy">Comprar Skills Pack — Agente Inmobiliario</a>
+    <div class="cta-note">Pago seguro procesado por Stripe.</div>
+  </div>
+
+  <div class="footnote">
+    ¿No es tu perfil? <a href="index.html">Vuelve al selector</a> o haz el <a href="https://testskills.rodolfobuitrago.com">diagnóstico gratuito</a>.
+  </div>
+
+<script>
+  document.querySelectorAll('.acc-item').forEach(function(item){
+    var header = item.querySelector('.acc-header');
+    var body = item.querySelector('.acc-body');
+    header.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.acc-item.open').forEach(function(openItem){
+        if(openItem !== item){
+          openItem.classList.remove('open');
+          openItem.querySelector('.acc-body').style.maxHeight = null;
+        }
+      });
+      if(isOpen){
+        item.classList.remove('open');
+        body.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
