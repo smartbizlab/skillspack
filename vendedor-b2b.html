@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills Pack para Vendedor B2B | Smart Business</title>
+<meta name="description" content="13 skills de Claude AI para organizar tu pipeline, vender valor antes que precio y navegar comités de compra con varios stakeholders. $49 USD pago único.">
+<style>
+  :root{
+    --carbon:#161512;
+    --carbon-soft:#201f1b;
+    --carbon-line:#332f28;
+    --esmeralda:#2EE6A6;
+    --rust:#C2622E;
+    --text:#F2F0EA;
+    --text-muted:#a8a49a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--carbon);
+    color:var(--text);
+    font-family:'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Playfair Display', Georgia, serif;font-weight:800;letter-spacing:-0.01em;}
+
+  .nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 24px;
+    border-bottom:1px solid var(--carbon-line);
+    position:sticky;top:0;
+    background:rgba(22,21,18,0.92);
+    backdrop-filter:blur(8px);
+    z-index:10;
+  }
+  .back-link{
+    font-size:13px;color:var(--text-muted);text-decoration:none;
+    display:flex;align-items:center;gap:6px;
+  }
+  .back-link:hover{color:var(--esmeralda);}
+  .brand-mini{font-family:'Playfair Display',serif;font-size:15px;font-weight:800;}
+  .brand-mini span{color:var(--esmeralda);}
+
+  .hero{
+    padding:60px 24px 44px;
+    max-width:680px;margin:0 auto;
+    text-align:center;
+  }
+  .eyebrow{
+    font-size:11px;text-transform:uppercase;letter-spacing:0.18em;
+    color:var(--esmeralda);font-weight:500;
+    display:block;margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:clamp(28px,6.5vw,44px);
+    line-height:1.08;
+    margin-bottom:18px;
+  }
+  .hero h1 em{color:var(--rust);font-style:italic;}
+  .hero p{
+    font-size:16px;color:var(--text-muted);
+    max-width:500px;margin:0 auto 8px;
+  }
+  .hero-stat{
+    display:inline-block;margin-top:20px;
+    font-size:12.5px;color:var(--text-muted);
+    border:1px solid var(--carbon-line);
+    border-radius:100px;padding:8px 16px;
+  }
+  .hero-stat b{color:var(--text);}
+
+  .problems-wrap{
+    max-width:680px;margin:0 auto;padding:0 20px;
+    display:grid;grid-template-columns:1fr;gap:10px;
+    margin-bottom:36px;
+  }
+  @media(min-width:640px){
+    .problems-wrap{grid-template-columns:repeat(3,1fr);}
+  }
+  .problem-card{
+    background:var(--carbon-soft);
+    border:1px solid var(--carbon-line);
+    border-left:2px solid var(--esmeralda);
+    border-radius:10px;
+    padding:18px 16px;
+  }
+  .problem-num{
+    display:block;font-family:'Playfair Display',serif;font-weight:700;
+    font-size:13px;color:var(--esmeralda);margin-bottom:8px;
+  }
+  .problem-card p{font-size:13.5px;color:var(--text-muted);line-height:1.55;}
+
+  .section-label{
+    max-width:680px;margin:0 auto;padding:0 24px;
+    font-size:12px;text-transform:uppercase;letter-spacing:0.12em;
+    color:var(--text-muted);
+    text-align:center;margin-bottom:20px;margin-top:8px;
+  }
+
+  .accordion-wrap{max-width:680px;margin:0 auto;padding:0 20px 48px;}
+  .acc-item{
+    border:1px solid var(--carbon-line);
+    border-radius:12px;
+    margin-bottom:10px;
+    overflow:hidden;
+    background:var(--carbon-soft);
+  }
+  .acc-header{
+    display:flex;align-items:center;gap:14px;
+    padding:16px 18px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .acc-num{
+    font-family:'Playfair Display',serif;font-weight:700;
+    font-size:14px;color:var(--esmeralda);
+    width:26px;flex-shrink:0;
+  }
+  .acc-title{
+    flex:1;font-size:15px;font-weight:500;color:var(--text);
+  }
+  .acc-chevron{
+    color:var(--text-muted);font-size:14px;
+    transition:transform 0.2s ease;flex-shrink:0;
+  }
+  .acc-item.open .acc-chevron{transform:rotate(180deg);color:var(--esmeralda);}
+  .acc-body{
+    max-height:0;overflow:hidden;
+    transition:max-height 0.25s ease;
+  }
+  .acc-body-inner{
+    padding:0 18px 18px 58px;
+    font-size:14px;color:var(--text-muted);
+    line-height:1.6;
+  }
+
+  .price-block{
+    max-width:520px;margin:16px auto 0;
+    padding:32px 28px;
+    background:var(--carbon-soft);
+    border:1px solid var(--carbon-line);
+    border-radius:18px;
+    text-align:center;
+  }
+  .price-tag{
+    font-family:'Playfair Display',serif;font-weight:800;
+    font-size:44px;color:var(--text);
+    margin-bottom:4px;
+  }
+  .price-tag span{font-size:16px;color:var(--text-muted);font-family:'DM Sans',sans-serif;font-weight:300;}
+  .price-sub{font-size:13px;color:var(--text-muted);margin-bottom:24px;}
+  .price-includes{
+    text-align:left;font-size:13.5px;color:var(--text-muted);
+    margin-bottom:26px;
+  }
+  .price-includes li{
+    list-style:none;padding-left:22px;position:relative;margin-bottom:8px;
+  }
+  .price-includes li::before{
+    content:"✓";position:absolute;left:0;color:var(--esmeralda);
+  }
+  .cta-buy{
+    display:block;width:100%;
+    background:var(--rust);color:var(--text);
+    font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:0.06em;
+    padding:16px;border-radius:100px;text-decoration:none;
+    text-align:center;
+  }
+  .cta-note{font-size:11.5px;color:var(--text-muted);margin-top:14px;}
+
+  .footnote{
+    max-width:560px;margin:0 auto;padding:40px 24px 64px;
+    text-align:center;font-size:12.5px;color:var(--text-muted);
+  }
+  .footnote a{color:var(--esmeralda);text-decoration:none;}
+
+  @media(max-width:599px){
+    .nav{padding:14px 18px;}
+    .hero{padding:44px 20px 32px;}
+    .price-block{padding:26px 20px;margin:16px 16px 0;}
+    body{font-weight:400;}
+    .eyebrow{font-size:13px;letter-spacing:0.1em;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="nav">
+    <a href="index.html" class="back-link">← Cambiar de perfil</a>
+    <div class="brand-mini">Skills<span>Pack</span></div>
+  </div>
+
+  <div class="hero">
+    <span class="eyebrow">Skills Pack · Vendedor B2B</span>
+    <h1>Vender valor <em>antes</em> que precio</h1>
+    <p>13 skills de Claude AI para organizar tu pipeline, presentar antes de cotizar y navegar un comité de compras con varios intereses en juego.</p>
+    <div class="hero-stat"><b>13</b> skills · funcionan en Claude AI · actualización 12 meses</div>
+  </div>
+
+  <div class="problems-wrap">
+    <div class="problem-card">
+      <span class="problem-num">01</span>
+      <p>Dependes de la memoria o de un Excel desordenado en vez de un pipeline claro.</p>
+    </div>
+    <div class="problem-card">
+      <span class="problem-num">02</span>
+      <p>Presentas precio antes de que el cliente entienda el valor de la demo.</p>
+    </div>
+    <div class="problem-card">
+      <span class="problem-num">03</span>
+      <p>El comité de compras devuelve la propuesta con dudas sobre el ROI.</p>
+    </div>
+  </div>
+
+  <div class="section-label">Lo que incluye tu pack</div>
+
+  <div class="accordion-wrap" id="accordion">
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">01</span><span class="acc-title">Investigación y preparación de cuenta</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Reúne lo que necesitas saber de la cuenta antes de la primera llamada, para no quemar la única oportunidad de causar buena impresión.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">02</span><span class="acc-title">Gestión del pipeline y CRM</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Organiza en qué oportunidades enfocarte hoy, sin depender de la memoria o de un Excel desordenado.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">03</span><span class="acc-title">Presentación y demo de valor</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Estructura la demo para que el cliente entienda el valor antes de ver el precio, no al revés.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">04</span><span class="acc-title">Propuesta comercial ejecutiva</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Redacta la propuesta para que el comité de compras la apruebe sin devolverla con dudas sobre el ROI.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">05</span><span class="acc-title">Gestión de cuentas existentes</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Te ayuda a identificar oportunidades de venderle más a un cliente que ya tienes, sin depender solo de prospectos nuevos.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">06</span><span class="acc-title">Comunicación interna de ventas</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Redacta el reporte para que tu gerente sepa dónde estás, sin que tengas que armarlo desde cero cada semana.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">07</span><span class="acc-title">Prospección y primer contacto</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Redacta el mensaje de contacto inicial para generar tu propio pipeline, en vez de depender 100% de los leads que te pasa marketing.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">08</span><span class="acc-title">Manejo de objeciones y cierre</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Te da respuestas para "está muy caro" o "lo voy a pensar", sin perder el trato en ese mismo momento.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">09</span><span class="acc-title">Seguimiento de clientes y prospectos</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Te ayuda a no perder una venta solo porque se te pasó escribir de nuevo a tiempo.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">10</span><span class="acc-title">Diagnóstico y validación</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Te ayuda a entender por qué una oportunidad se estancó, antes de descartarla o forzarla sin razón.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">11</span><span class="acc-title">Negociación de condiciones comerciales</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Te prepara los argumentos para negociar descuento, plazo de pago o condiciones de contrato después de presentada la propuesta.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">12</span><span class="acc-title">Coordinación con equipos internos</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Te ayuda a traspasar la cuenta a otro equipo (soporte, legal, finanzas) sin que se pierda contexto en el camino.</div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-header"><span class="acc-num">13</span><span class="acc-title">Manejo de múltiples stakeholders</span><span class="acc-chevron">▾</span></div>
+      <div class="acc-body"><div class="acc-body-inner">Te ayuda a navegar un comité de compra con intereses distintos (el usuario quiere features, finanzas quiere ROI, legal quiere cláusulas).</div></div>
+    </div>
+
+  </div>
+
+  <div class="price-block">
+    <div class="price-tag">$49 <span>USD · pago único</span></div>
+    <div class="price-sub">Actualizaciones incluidas por 12 meses</div>
+    <ul class="price-includes">
+      <li>13 skills listas para instalar en Claude AI</li>
+      <li>Guía de instalación y guía de uso por skill</li>
+      <li>Actualizaciones durante 12 meses</li>
+    </ul>
+    <a href="PENDIENTE_STRIPE_LINK_VENDEDOR_B2B" class="cta-buy">Comprar Skills Pack — Vendedor B2B</a>
+    <div class="cta-note">Pago seguro procesado por Stripe.</div>
+  </div>
+
+  <div class="footnote">
+    ¿No es tu perfil? <a href="index.html">Vuelve al selector</a> o haz el <a href="https://testskills.rodolfobuitrago.com">diagnóstico gratuito</a>.
+  </div>
+
+<script>
+  document.querySelectorAll('.acc-item').forEach(function(item){
+    var header = item.querySelector('.acc-header');
+    var body = item.querySelector('.acc-body');
+    header.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.acc-item.open').forEach(function(openItem){
+        if(openItem !== item){
+          openItem.classList.remove('open');
+          openItem.querySelector('.acc-body').style.maxHeight = null;
+        }
+      });
+      if(isOpen){
+        item.classList.remove('open');
+        body.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
