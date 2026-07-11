@@ -333,5 +333,44 @@
     });
   });
 </script>
+<script>
+  document.querySelectorAll('.acc-item').forEach(function(item){
+    var header = item.querySelector('.acc-header');
+    var body = item.querySelector('.acc-body');
+    header.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.acc-item.open').forEach(function(openItem){
+        if(openItem !== item){
+          openItem.classList.remove('open');
+          openItem.querySelector('.acc-body').style.maxHeight = null;
+        }
+      });
+      if(isOpen){
+        item.classList.remove('open');
+        body.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+<script>
+  document.querySelectorAll('a[href*="rodolfobuitrago.com/skillspack-"]').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var destino = btn.href;
+      gtag('event', 'click_stripe_button', {
+        perfil: 'abogado-independiente',
+        event_category: 'ecommerce',
+        event_label: 'cta_final',
+        event_callback: function() { window.location.href = destino; },
+        event_timeout: 1000
+      });
+    });
+  });
+</script>
+</body>
+</html>
 </body>
 </html>
