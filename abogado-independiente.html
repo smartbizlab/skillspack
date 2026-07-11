@@ -333,6 +333,16 @@
     });
   });
 </script>
-
+<script>
+  document.querySelectorAll('a[href*="rodolfobuitrago.com/skillspack-"]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      gtag('event', 'click_stripe_button', {
+        perfil: 'abogado-independiente', // el slug del perfil, cambia por página
+        event_category: 'ecommerce',
+        event_label: 'cta_final'
+      });
+    });
+  });
+</script>
 </body>
 </html>
