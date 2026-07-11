@@ -334,28 +334,6 @@
   });
 </script>
 <script>
-  document.querySelectorAll('.acc-item').forEach(function(item){
-    var header = item.querySelector('.acc-header');
-    var body = item.querySelector('.acc-body');
-    header.addEventListener('click', function(){
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.acc-item.open').forEach(function(openItem){
-        if(openItem !== item){
-          openItem.classList.remove('open');
-          openItem.querySelector('.acc-body').style.maxHeight = null;
-        }
-      });
-      if(isOpen){
-        item.classList.remove('open');
-        body.style.maxHeight = null;
-      } else {
-        item.classList.add('open');
-        body.style.maxHeight = body.scrollHeight + 'px';
-      }
-    });
-  });
-</script>
-<script>
   document.querySelectorAll('a[href*="rodolfobuitrago.com/skillspack-"]').forEach(function(btn) {
     btn.addEventListener('click', function(e) {
       e.preventDefault();
@@ -370,7 +348,5 @@
     });
   });
 </script>
-</body>
-</html>
 </body>
 </html>
