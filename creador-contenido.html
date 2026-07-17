@@ -99,7 +99,9 @@
 
   /* PRICE BLOCK */
   .price-box{ border:1px solid var(--border); padding:40px; }
-  .price-amount{ font-family:'Playfair Display',serif; font-size:44px; font-weight:700; margin-bottom:4px; }
+  .price-row{ display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:4px; }
+  .price-was{ font-family:'Playfair Display',serif; font-size:22px; font-weight:500; color:var(--text-faint); text-decoration:line-through; }
+  .price-amount{ font-family:'Playfair Display',serif; font-size:44px; font-weight:700; }
   .price-sub{ color:var(--text-soft); font-size:15px; margin-bottom:24px; }
   .price-list{ list-style:none; margin-bottom:32px; }
   .price-list li{ padding:8px 0; border-top:1px solid var(--border); color:var(--text-soft); font-size:15px; }
@@ -241,7 +243,10 @@
 <section class="alt">
   <div class="wrap">
     <div class="price-box">
-      <div class="price-amount">$49 USD</div>
+      <div class="price-row">
+        <span class="price-was">$49 USD</span>
+        <span class="price-amount">$24 USD</span>
+      </div>
       <div class="price-sub">Pago único · actualizaciones incluidas por 12 meses</div>
       <ul class="price-list">
         <li>12 skills listas para instalar en Claude AI</li>
